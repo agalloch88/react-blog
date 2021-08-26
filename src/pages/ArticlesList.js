@@ -3,7 +3,7 @@ import React from 'react';
 function ArticlesList() {
     return (
         <>
-            <h1>List or Articles</h1>
+            <h1>List of Articles</h1>
         </>
     )
 }

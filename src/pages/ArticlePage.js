@@ -1,9 +1,19 @@
 import React from 'react';
+import articleContent from './article-content';
 
-function ArticlePage() {
+function ArticlePage({ match }) {
+
+    const name = match.params.name
+    const article = articleContent.find(article => article.name === name);
+
+    if (!article) return <h1>Article does not exist!</h1>
+
     return (
         <>
-            <h1>This is a single Article</h1>
+            <h1>{article.title}</h1>
+            {article.content.map((paragraph, key) => (
+                <p key={key}>{paragraph}</p>
+            ))}
         </>
     )
 }
